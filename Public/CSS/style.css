@@ -3,13 +3,15 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background: #e5e5e579;
 }
 
-main {
+.tela1, .tela3 {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 140px;
 }
 
 header {
@@ -35,7 +37,6 @@ header {
 .quizzUsuario .semQuizz {
     width: 100%;
     height: 180px;
-    margin-top: 140px;
 
     border: 1px dashed #D5D5D5;
     border-radius: 5px;
@@ -48,17 +49,17 @@ header {
     display: none;
 }
 
-.semQuizz h1 {
+.tela1 .semQuizz h1 {
     font-size: 20px;
     color: #B9B9B9;
     margin-bottom: 30px;
 }
 
-.semQuizz div {
+.tela1 .semQuizz div {
     width: 250px;
 }
 
-.semQuizz button {
+.tela1 .semQuizz button {
     width: 136px;
     height: 40px;
     font-size: 21px;
@@ -68,44 +69,42 @@ header {
     border-radius: 50px;
 }
 
-.quizzSalvos{
-    margin-top: 140px;
+.tela1 .quizzSalvos{
     font-weight: 700;
     font-size: 20px;
 }
 
-.quizzSalvos ul{
+.tela1 .quizzSalvos ul{
     justify-content: flex-start;
 }
 
-.quizzSalvos div div {
+.tela1 .quizzSalvos div div{
     display: flex;
     align-items: center;
 }
 
-.quizzSalvos ion-icon{
+.tela1 .quizzSalvos ion-icon{
     color: #EC362D;
     height: 30px;
     width: 30px;
     margin-left: 10px;
 }
 
-
-
 button:active ,ion-icon:active, li:active{
     background-color: rgba(0, 0, 0, 0.05);
     transform: translatey(2px);
 }
 
-.container{
+.tela1 .container, .tela3 .container{
     width: 1100px;
     margin-top: 60px;
-    font-weight: 700;
+
     font-size: 20px;
 }
 
-.container h1{
+.tela1 .container h1, .tela3 .container h1{
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 ul{
@@ -132,8 +131,52 @@ li.quizz h1{
     display: none;
 }
 
+.tela3 .comeco h1{
+    margin-bottom: 20px;
+}
+
+.tela3 .criarQuizz, .tela3 .caixaPergunta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tela3 .caixaPergunta{
+    width: 600px;
+    height: 256px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.tela3 .caixaPergunta input{
+    width: 564px;
+    height: 46px;
+    margin: 6px 0px;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+
+    font-style: italic;
+    font-size: 20px;
+}
+
+.tela3 button{
+    width: 370px;
+    height: 54px;
+    background-color: #EC362D;
+    color: white;
+
+    font-size: 20px;
+    border: none;
+
+    border-radius: 15px;
+    margin-top: 60px;
+}
+
 @media (max-width: 1100px){
-    .quizzUsuario,.container{
+    .tela1 .quizzUsuario,.tela1 .container{
         width: 380px;
     }
 }
