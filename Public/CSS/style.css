@@ -1,1 +1,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    position: fixed;
+    top: 0;
+
+    background-color: #EC362D;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+    margin-left: 80px;
+}
+
+.quizzUsuario {
+    width: 1100px;
+}
+
+.quizzUsuario .semQuizz {
+    width: 100%;
+    height: 180px;
+    margin-top: 140px;
+
+    border: 1px dashed #D5D5D5;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    display: none;
+}
+
+.semQuizz h1 {
+    font-size: 20px;
+    color: #B9B9B9;
+    margin-bottom: 30px;
+}
+
+.semQuizz div {
+    width: 250px;
+}
+
+.semQuizz button {
+    width: 136px;
+    height: 40px;
+    font-size: 21px;
+    color: #EC362D;
+    background-color: white;
+    border: 1px dashed #EC362D;
+    border-radius: 50px;
+}
+
+.quizzSalvos{
+    margin-top: 140px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.quizzSalvos ul{
+    justify-content: flex-start;
+}
+
+.quizzSalvos div div {
+    display: flex;
+    align-items: center;
+}
+
+.quizzSalvos ion-icon{
+    color: #EC362D;
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
+
+
+
+button:active ,ion-icon:active, li:active{
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translatey(2px);
+}
+
+.container{
+    width: 1100px;
+    margin-top: 60px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.container h1{
+    margin-bottom: 20px;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul li.quizz{
+    width: 340px;
+    height: 180px;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+li.quizz h1{
+    margin: 10px 10px;
+    font-weight: 400;
+}
+
+.hidden{
+    display: none;
+}
+
+@media (max-width: 1100px){
+    .quizzUsuario,.container{
+        width: 380px;
+    }
+}
