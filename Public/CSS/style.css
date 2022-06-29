@@ -1,5 +1,9 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -40,6 +44,7 @@ header {
 
     border: 1px dashed #D5D5D5;
     border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -73,7 +78,7 @@ header {
 .tela1 .quizzSalvos{
     font-weight: 700;
     font-size: 20px;
-    display: none;
+    
 }
 
 .tela1 .quizzSalvos ul{
@@ -93,8 +98,10 @@ header {
 }
 
 button:active ,ion-icon:active, li:active{
-    background-color: rgba(0, 0, 0, 0.05);
     transform: translatey(2px);
+}
+button:hover ,ion-icon:hover, li:hover{
+    cursor: pointer;
 }
 
 .tela1 .container, .tela3 .container{
@@ -114,7 +121,7 @@ ul{
     flex-wrap: wrap;
 }
 
-ul li.quizz{
+ul li.quizz, .tela3 .quizz{
     width: 340px;
     height: 180px;
     color: white;
@@ -124,7 +131,7 @@ ul li.quizz{
     margin: 10px;
 }
 
-li.quizz h1{
+li.quizz h1, .tela3 .quizz h1{
     margin: 10px 10px;
     font-weight: 400;
 }
@@ -133,11 +140,13 @@ li.quizz h1{
     display: none;
 }
 
-.tela3 .comeco h1{
-    margin-bottom: 20px;
+.tela3 .comeco h1,.tela3 .criarPerguntas h1{
+    margin-bottom: 30px;
+
 }
 
-.tela3 .criarQuizz, .tela3 .caixaPergunta{
+.tela3 .criarQuizz, .tela3 .caixaPergunta, .tela3 .quizzPronto{
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -147,10 +156,11 @@ li.quizz h1{
 
 .tela3 .caixaPergunta{
     width: 600px;
-    height: 256px;
+    min-height: 256px;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .tela3 .caixaPergunta input{
@@ -175,6 +185,16 @@ li.quizz h1{
 
     border-radius: 15px;
     margin-top: 60px;
+}
+
+.tela3 button.home{
+    margin-top: 10px;
+    background-color: unset;
+    color: #818181;
+}
+
+.tela3 .quizzPronto{
+    display: none;
 }
 
 @media (max-width: 1100px){
