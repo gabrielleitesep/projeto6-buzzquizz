@@ -21,9 +21,9 @@
             <div class="tela1">
                 <div class="quizzUsuario">
                     <div class="semQuizz">
-                        <div>
+                        <div onclick="">
                             <h1>Você não criou nenhum quizz ainda :(</h1>
-                            <a href="tela3.html" rel="next" target="_self"><button>Criar quizz</button></a>
+                            <button onclick ="renderTela3()">Criar quizz</button>
                         </div>
                     </div>
 
@@ -31,7 +31,7 @@
                         <div>
                             <div>
                                 <h1>Seus Quizzes</h1>
-                                <ion-icon name="add-circle-sharp"></ion-icon>
+                                <ion-icon name="add-circle-sharp" onclick="renderTela3()"></ion-icon>
                             </div>
                             <ul>
                                 <li id="0" class="quizz" style="
@@ -63,41 +63,6 @@
                         background-position: center;">
                             <h1>Zorão da massa</h1>
                         </li>
-                        <li id="0" class="quizz" style="
-                        background:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
-                        url(https://c4.wallpaperflare.com/wallpaper/332/915/762/one-piece-roronoa-zoro-hd-wallpaper-preview.jpg);
-                        background-size: cover;
-                        background-position: center;">
-                            <h1>Zorão da massa</h1>
-                        </li>
-                        <li id="0" class="quizz" style="
-                        background:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
-                        url(https://c4.wallpaperflare.com/wallpaper/332/915/762/one-piece-roronoa-zoro-hd-wallpaper-preview.jpg);
-                        background-size: cover;
-                        background-position: center;">
-                            <h1>Zorão da massa</h1>
-                        </li>
-                        <li id="0" class="quizz" style="
-                        background:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
-                        url(https://c4.wallpaperflare.com/wallpaper/332/915/762/one-piece-roronoa-zoro-hd-wallpaper-preview.jpg);
-                        background-size: cover;
-                        background-position: center;">
-                            <h1>Zorão da massa</h1>
-                        </li>
-                        <li id="0" class="quizz" style="
-                        background:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
-                        url(https://c4.wallpaperflare.com/wallpaper/332/915/762/one-piece-roronoa-zoro-hd-wallpaper-preview.jpg);
-                        background-size: cover;
-                        background-position: center;">
-                            <h1>Zorão da massa</h1>
-                        </li>
-                        <li id="0" class="quizz" style="
-                        background:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
-                        url(https://c4.wallpaperflare.com/wallpaper/332/915/762/one-piece-roronoa-zoro-hd-wallpaper-preview.jpg);
-                        background-size: cover;
-                        background-position: center;">
-                            <h1>Zorão da massa</h1>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -105,7 +70,8 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="src/index.js"></script>
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+<script src="src/index.js" type="module"></script>
+<script src="src/tela3.js" type="module"></script>
 
 </html>
