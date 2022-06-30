@@ -146,6 +146,12 @@ li.quizz h1, .tela3 .quizz h1{
 
 }
 
+.tela3 .criarPerguntas ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .tela3 .criarQuizz, .tela3 .caixaPergunta, .tela3 .quizzPronto{
     height: max-content;
     display: flex;

@@ -1,11 +1,8 @@
-let quizz = [{
-    image:"https",
-    text:"aaaa"
-}]
+let quizzUser = []
 
 
 
-export default function renderTela3(){
+export default function renderTela3() {
     document.querySelector("main").innerHTML = `
     <div class="tela3">
         <div class="container">
@@ -13,10 +10,10 @@ export default function renderTela3(){
                 <div class="comeco">
                     <h1>Comece pelo começo</h1>
                     <div class="caixaPergunta">
-                        <input type="text" placeholder="Título  do seu quizz">
-                        <input type="url" placeholder="URL da imagem do seu quizz">
-                        <input type="number" placeholder="Quantidade de perguntas do quizz">
-                        <input type="number" placeholder="Quantidade de níveis do quizz">
+                        <input id = "title" type="text" placeholder="Título  do seu quizz">
+                        <input id = "url" type="url" placeholder="URL da imagem do seu quizz">
+                        <input id = "qQuestion" type="number" placeholder="Quantidade de perguntas do quizz">
+                        <input id = "qLeves" type="number" placeholder="Quantidade de níveis do quizz">
                     </div>
                     <button onclick = "renderPerguntas()">Prosseguir pra criar perguntas</button>
                 </div>
@@ -25,31 +22,41 @@ export default function renderTela3(){
     `
 }
 
-function renderPerguntas(){
+function renderPerguntas() {
+    let qQuestion = Number(document.querySelector(".tela3 .comeco #qQuestion").value)
+    let n = 1
+    console.log(qQuestion)
     document.querySelector(".tela3 .criarQuizz").innerHTML = `
                 <div class="criarPerguntas ">
                     <h1>Crie sua pergunta</h1>
-                    <div class="caixaPergunta">
-                        <h1>Pergunta 1</h1>
-                        <input type="text" placeholder="Texto da pergunta">
-                        <input type="text" placeholder="Cor de fundo da pergunta">
-                        <h1>Resposta Correta</h1>
-                        <input type="text" placeholder="Resposta correta">
-                        <input type="url" placeholder="URL da imagem">
-                        <h1>Resposta incorretas</h1>
-                        <input type="number" placeholder="Resposta incorreta 1">
-                        <input type="url" placeholder="URL da imagem">
-                        <input type="number" placeholder="Resposta incorreta 2">
-                        <input type="url" placeholder="URL da imagem">
-                        <input type="number" placeholder="Resposta incorreta 3">
-                        <input type="url" placeholder="URL da imagem">
-                    </div>
+                    <ul></ul>
                     <button onclick = "renderNiveis()">Prosseguir pra criar níveis</button>
                 </div>
     `
+    for (let i = 0; i < qQuestion; i++) {
+        document.querySelector(".tela3 .criarQuizz ul").innerHTML += `     
+                    <li class="caixaPergunta" id = "qAnswer_${n}">
+                        <h1>Pergunta ${n}</h1>
+                        <input type="text" id="textQuestion" placeholder="Texto da pergunta">
+                        <input type="text" id="colorQuestion" placeholder="Cor de fundo da pergunta">
+                        <h1>Resposta Correta</h1>
+                        <input type="text" id="answerTrue" placeholder="Resposta correta">
+                        <input type="url" id="urlAnswertrue" placeholder="URL da imagem">
+                        <h1>Resposta incorretas</h1>
+                        <input type="number" id="answerFalse1" placeholder="Resposta incorreta 1">
+                        <input type="url" id="urlAnswerFalse1" placeholder="URL da imagem">
+                        <input type="number" id="answerFalse2" placeholder="Resposta incorreta 2">
+                        <input type="url" id="urlAnswerFalse2" placeholder="URL da imagem">
+                        <input type="number" id="answerFalse3" placeholder="Resposta incorreta 3">
+                        <input type="url" id="urlAnswerFalse3" placeholder="URL da imagem">
+                    </li>          
+    `
+    n++
+    }
 }
 
-function renderNiveis(){
+function renderNiveis() {
+
     document.querySelector(".tela3 .criarQuizz").innerHTML = `
                 <div class="criarNiveis">
                     <h1>Agora, decida os níveis</h1>
@@ -60,19 +67,12 @@ function renderNiveis(){
                         <input type="url" placeholder="URL da imagem do nível">
                         <input type="text" placeholder="Descrição do nível">
                     </div>
-                    <div class="caixaPergunta">
-                        <h1>Nível 2</h1>
-                        <input type="text" placeholder="Título do nível">
-                        <input type="number" placeholder="% de acerto mínima">
-                        <input type="url" placeholder="URL da imagem do nível">
-                        <input type="text" placeholder="Descrição do nível">
-                    </div>
                     <button onclick = "renderPronto()">Prosseguir pra criar níveis</button>
                 </div>
     `
 }
 
-function renderPronto(){
+function renderPronto() {
     document.querySelector(".tela3 .criarQuizz").innerHTML = `
                 <div class="quizzPronto">
                     <div class="quizz" style="
@@ -90,10 +90,10 @@ function renderPronto(){
 
 
 
-function storageQuizz(){
-    localStorage.setItem("usuario",JSON.stringify(quizz))
-    
-    }
+function storageQuizz() {
+    localStorage.setItem("User", JSON.stringify(quizz))
+
+}
 
 window.renderTela3 = renderTela3
 window.renderPerguntas = renderPerguntas
