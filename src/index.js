@@ -1,10 +1,8 @@
 
 
 function testeee(){
-    let au = JSON.parse(localStorage.getItem("usuario"))
+    let quizzUsuario = JSON.parse(localStorage.getItem("usuario"))
     
-    console.log(au)
-    
+    console.log(quizzUsuario)
 }
 
-testeee()
