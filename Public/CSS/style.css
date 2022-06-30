@@ -174,7 +174,7 @@ li.quizz h1, .tela3 .quizz h1{
     font-size: 20px;
 }
 
-.tela3 button{
+.tela3 button, .tela2 button{
     width: 370px;
     height: 54px;
     background-color: #EC362D;
@@ -188,28 +188,26 @@ li.quizz h1, .tela3 .quizz h1{
 }
 
 .quizzBackground {
-    width: 100%;
+    width: 100%px;
     height: 227px;
     text-align: center;  
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;  
+    margin-top: 80px;
 }
 
 
 .quizzBackground h1 {
     font-size: 39px;
     line-height: 46px;
-    color: white;
-    margin-top: 80px;
+    color: rgb(235, 235, 235);
 }
 
 .quizzQuestions {
     width: 100%;
-    height: 1000px;
-    background-color: bisque;
-    text-align: center;  
+    background-color: #F2F2F2;  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -217,30 +215,87 @@ li.quizz h1, .tela3 .quizz h1{
 
 .containerQuestion {
     width: 760px;
-    min-height: 400px;
-    background-color: blue; 
+    background-color: white; 
     margin-top: 50px;
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+.containerQuestion img {
+    width: 331px;
+    height: 175px;
+}
+.containerQuestion h2 {
+    padding-top: 15px;
+    font-weight: 700;
+}
+.containerResults h4 {
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 25px;
+    color: #484848;
 }
 .questionLine {
     width: 100%;
     height: 137px;
-    background-color: beige;
+    background-color: lightseagreen;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.questionLine h1, .resultLine h1 {
+    font-style: bold;
+    font-weight: 700;
+    font-size: 23px;
+}
 .questionOptions {
     width: 50%;
-    height: 271px;
-    background-color: orange;
+    height: 220px;
     margin-top: 20px;
+    padding: 10px;
+}
+.containerResults {
+    width: 760px;
+    background-color: white; 
+    margin-top: 50px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+.quizzResults {
+    width: 364px;
+    height: 273px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    font-size: 39px;
+    line-height: 46px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+.quizzResultsText {
+    width: 330px;
+    padding: 20px;
+    text-align: left;
+    line-height: 25px;
+}
+.resultLine {
+    width: 100%;
+    height: 137px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.resultLine h1 {
+    color: white;
 }
 
-.tela3 button.home{
+.tela3 button.home, .tela2 button.home{
     margin-top: 10px;
     background-color: unset;
     color: #818181;
@@ -248,6 +303,11 @@ li.quizz h1, .tela3 .quizz h1{
 
 .tela3 .quizzPronto{
     display: none;
+}
+.tela2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 1100px){
