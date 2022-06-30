@@ -14,11 +14,11 @@
 
 <body>
     <div class="root">
-        <div class="tela3">
-            <header>
-                <h1>BuzzQuizz</h1>
-            </header>
-            <main>
+        <header>
+            <h1>BuzzQuizz</h1>
+        </header>
+        <main>
+            <div class="tela3">
                 <div class="container">
                     <div class="criarQuizz">
                         <div class="comeco" style="display: none;">
@@ -31,12 +31,12 @@
                             </div>
                             <button>Prosseguir pra criar perguntas</button>
                         </div>
-                        <div class="criarPerguntas">
+                        <div class="criarPerguntas ">
                             <h1>Crie sua pergunta</h1>
                             <div class="caixaPergunta">
                                 <h1>Pergunta 1</h1>
                                 <input type="text" placeholder="Texto da pergunta">
-                                <input type="text"placeholder = "Cor de fundo da pergunta">
+                                <input type="text" placeholder="Cor de fundo da pergunta">
                                 <h1>Resposta Correta</h1>
                                 <input type="text" placeholder="Resposta correta">
                                 <input type="url" placeholder="URL da imagem">
@@ -51,7 +51,7 @@
                             <div class="caixaPergunta">
                                 <h1>Pergunta 2</h1>
                                 <input type="text" placeholder="Texto da pergunta">
-                                <input type="text"placeholder = "Cor de fundo da pergunta">
+                                <input type="text" placeholder="Cor de fundo da pergunta">
                                 <h1>Resposta Correta</h1>
                                 <input type="text" placeholder="Resposta correta">
                                 <input type="url" placeholder="URL da imagem">
@@ -65,8 +65,26 @@
                             </div>
                             <button>Prosseguir pra criar níveis</button>
                         </div>
+                        <div class="criarNiveis">
+                            <h1>Agora, decida os níveis</h1>
+                            <div class="caixaPergunta">
+                                <h1>Nível 1</h1>
+                                <input type="text" placeholder="Título do nível">
+                                <input type="number" placeholder="% de acerto mínima">
+                                <input type="url" placeholder="URL da imagem do nível">
+                                <input type="text" placeholder="Descrição do nível">
+                            </div>
+                            <div class="caixaPergunta">
+                                <h1>Nível 2</h1>
+                                <input type="text" placeholder="Título do nível">
+                                <input type="number" placeholder="% de acerto mínima">
+                                <input type="url" placeholder="URL da imagem do nível">
+                                <input type="text" placeholder="Descrição do nível">
+                            </div>
+                            <button>Prosseguir pra criar níveis</button>
+                        </div>
                         <div class="quizzPronto">
-                            <div class="quizz"style="
+                            <div class="quizz" style="
                             background:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
                             url(https://c4.wallpaperflare.com/wallpaper/332/915/762/one-piece-roronoa-zoro-hd-wallpaper-preview.jpg);
                             background-size: cover;
@@ -78,9 +96,9 @@
                         </div>
                     </div>
                 </div>
-            </main>
-        </div>
+        </main>
+    </div>
     </div>
 </body>
-    <script src="src/tela3.js"></script>    
+
 </html>
