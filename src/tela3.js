@@ -4,6 +4,7 @@ let userQuizz = {
     questions:[],
     levels:[]
 }
+let listUserQuizz = []
 
 let qQuestion
 let nLevels
@@ -49,7 +50,6 @@ function renderPerguntas() {
     userQuizz.title = String(document.querySelector(".tela3 .comeco #title").value)
     userQuizz.image = String(document.querySelector(".tela3 .comeco #url").value)
 
-    console.log(userQuizz)
     document.querySelector(".tela3 .criarQuizz").innerHTML = `
                 <div class="criarPerguntas ">
                     <h1>Crie sua pergunta</h1>
@@ -189,7 +189,6 @@ function saveLevels(){
                 minValue: Number(level.querySelector(`#percentage`).value)
             }
     }
-    console.log(userQuizz)
     storageQuizz()
 }
 
@@ -208,17 +207,15 @@ function renderPronto() {
                     <a href="index.html" rel="prev"><button class="home">Voltar pra home</button></a>
                 </div>
     `
-}
-let listUserQuizz = []
-   
+}   
 
 function storageQuizz() {
-    listUserQuizz.push(JSON.parse(localStorage.getItem("User")))
-    console.log(listUserQuizz)
-    listUserQuizz.push(userQuizz)  
-    localStorage.setItem("Useri", JSON.stringify(listUserQuizz))
-    console.log(listUserQuizz)
-    console.log(userQuizz)
+    if(JSON.parse(localStorage.getItem("User") !=  null)) { 
+        listUserQuizz = (JSON.parse(localStorage.getItem("User")))
+    }
+
+    listUserQuizz.push(JSON.stringify(userQuizz))  
+    localStorage.setItem("User", JSON.stringify(listUserQuizz))
 }
 
 window.renderTela3 = renderTela3
@@ -227,11 +224,3 @@ window.saveLevels = saveLevels
 window.renderPerguntas = renderPerguntas
 window.renderNiveis = renderNiveis
 window.renderPronto = renderPronto
-
-console.log("t3")
-
-
-export default function renderizarTela2(listaQuizzes){
-    let result = listaQuizzes + 1
-    return result
-}
