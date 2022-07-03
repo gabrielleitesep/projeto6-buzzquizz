@@ -20,7 +20,8 @@ function renderizarQuizz(promise) {
 }
 
 function renderizarQuizzLocal() {
-  let userQuizz = JSON.parse(localStorage.getItem("userQuizz"));
+  let userQuizz = JSON.parse(localStorage.getItem("User"));
+  console.log(userQuizz)
   if (!userQuizz) {
     document.querySelector(".tela1 .quizzUsuario").innerHTML = `
     <div class="semQuizz">
@@ -30,7 +31,7 @@ function renderizarQuizzLocal() {
     </div>
     </div>`;
   } else {
-    document.querySelector(".tela1 .quizzUsuario ul").innerHTML = `
+    document.querySelector(".tela1 .quizzUsuario").innerHTML = `
     <div class="quizzSalvos">
       <div>
         <div>
