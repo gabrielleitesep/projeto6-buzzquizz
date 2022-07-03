@@ -20,8 +20,6 @@ function renderizarQuizz(promise) {
 
 }
 
-import renderizarTela2 from "./tela3.js"
-
 console.log(renderizarTela2(1))
 /*function testeee(){
     let au = JSON.parse(localStorage.getItem("usuario"))
