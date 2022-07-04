@@ -1,5 +1,4 @@
-const getQuizz = axios.get("https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes").then(renderizarQuizz)
-
+const getQuizz = axios.get("https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes").then(renderizarQuizz)
 function renderizarQuizz(promise) {
   console.log(promise.data);
   promise.data.map((quizz) => {
@@ -17,12 +16,11 @@ function renderizarQuizz(promise) {
         <h1>${title}</h1>
     </li>
     `
-
   })
 
 }
 
-
+console.log(renderizarTela2(1))
 /*function testeee(){
     let au = JSON.parse(localStorage.getItem("usuario"))
     
