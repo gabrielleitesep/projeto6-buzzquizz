@@ -13,7 +13,7 @@
 
   <body>
     <div class="root">
-      <header>
+      <header onclick="returnMain()">
         <h1>BuzzQuizz</h1>
       </header>
       <main>
@@ -32,30 +32,14 @@
                   <ion-icon name="add-circle-sharp" onclick="renderTela3()"></ion-icon>
                 </div>
                 <ul>
-                  <li
-                    id="0"
-                    class="quizz"
-                    style="
-                      background: linear-gradient(
-                          180deg,
-                          rgba(255, 255, 255, 0) 0%,
-                          rgba(0, 0, 0, 0.5) 64.58%,
-                          #000000 100%
-                        ),
-                        url(https://c4.wallpaperflare.com/wallpaper/332/915/762/one-piece-roronoa-zoro-hd-wallpaper-preview.jpg);
-                      background-size: cover;
-                      background-position: center;
-                    "
-                  >
-                    <h1>Zorão da massa</h1>
-                  </li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="container">
             <h1>Todos os Quizzes</h1>
-            <ul></ul>
+            <ul>
+            </ul>
           </div>
         </div>
       </main>
@@ -64,5 +48,6 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
   <script src="src/index.js" type="module"></script>
+  <script src="src/tela2.js" type="module"></script>
   <script src="src/tela3.js" type="module"></script>
 </html>

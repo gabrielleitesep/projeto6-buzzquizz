@@ -6,6 +6,7 @@ let quizz;
 
 
 function renderizarTela2(response) {
+  console.log(response);
     main.innerHTML = `
         <div class="quizzBackground" style="
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), 
@@ -129,3 +130,6 @@ function selecionarResposta(elemento) {
 
 
 }
+
+window.renderizarTela2 = renderizarTela2
+window.selecionarResposta = selecionarResposta

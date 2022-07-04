@@ -286,13 +286,18 @@ li.quizz h1,
 .containerResults {
   width: 760px;
   background-color: white;
-  margin-top: 50px;
+  margin: 50px auto 0 auto;
   padding: 30px;
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
   box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.05);
 
+}
+.containerResults img {
+  width: 331px;
+  height: 175px;
+  object-fit: cover;
 }
 .quizzResults {
   width: 364px;
@@ -350,7 +355,7 @@ li.quizz h1,
     box-sizing: border-box;   
 }
 .questionOptions.false.oculta {
-    color: orange;
+    color: black
 }
 .questionOptions.true.oculta {
     color: #000000;
