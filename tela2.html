@@ -13,67 +13,40 @@
 
 <body>
     <div class="root">
-        <div class="quizzBackground" style="
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), 
-        url(https://recreio.uol.com.br/media/_versions/legacy/2021/05/28/hogwarts-1230088_widexl.jpg);
-        background-size: cover;
-        background-position: center;">
-            <h1>
-                Hogwarts Quizz
-            </h1>
-        </div>
-        <div class="tela2">
             <header>
                 <h1>BuzzQuizz</h1>
             </header>
             <main>
+               <!--  <div class="quizzBackground" style="
+                        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), 
+                    url(https://recreio.uol.com.br/media/_versions/legacy/2021/05/28/hogwarts-1230088_widexl.jpg);
+                    background-size: cover;
+                    background-position: center;">
+                        <h1>
+                            Hogwarts Quizz
+                        </h1>
+                </div>
                 <div class="quizzQuestions">
                     <div class="containerQuestion">
                         <div class="questionLine">
                             <h1>Pergunta</h1>
                         </div>
-                        <div class="questionOptions">
+                        <div class="questionOptions .um" onclick="selecionarResposta()">
                             <img src="https://recreio.uol.com.br/media/_versions/legacy/2021/05/28/hogwarts-1230088_widexl.jpg"
                                 alt="">
                             <h2>NOME</h2>
                         </div>
-                        <div class="questionOptions">
+                        <div class="questionOptions .dois">
                             <img src="https://recreio.uol.com.br/media/_versions/legacy/2021/05/28/hogwarts-1230088_widexl.jpg"
                                 alt="">
                             <h2>NOME</h2>
                         </div>
-                        <div class="questionOptions">
+                        <div class="questionOptions .tres">
                             <img src="https://recreio.uol.com.br/media/_versions/legacy/2021/05/28/hogwarts-1230088_widexl.jpg"
                                 alt="">
                             <h2>NOME</h2>
                         </div>
-                        <div class="questionOptions">
-                            <img src="https://recreio.uol.com.br/media/_versions/legacy/2021/05/28/hogwarts-1230088_widexl.jpg"
-                                alt="">
-                            <h2>NOME</h2>
-                        </div>
-
-                    </div>
-                    <div class="containerQuestion">
-                        <div class="questionLine">
-                            <h1>Pergunta</h1>
-                        </div>
-                        <div class="questionOptions">
-                            <img src="https://recreio.uol.com.br/media/_versions/legacy/2021/05/28/hogwarts-1230088_widexl.jpg"
-                                alt="">
-                            <h2>NOME</h2>
-                        </div>
-                        <div class="questionOptions">
-                            <img src="https://recreio.uol.com.br/media/_versions/legacy/2021/05/28/hogwarts-1230088_widexl.jpg"
-                                alt="">
-                            <h2>NOME</h2>
-                        </div>
-                        <div class="questionOptions">
-                            <img src="https://recreio.uol.com.br/media/_versions/legacy/2021/05/28/hogwarts-1230088_widexl.jpg"
-                                alt="">
-                            <h2>NOME</h2>
-                        </div>
-                        <div class="questionOptions">
+                        <div class="questionOptions .quatro">
                             <img src="https://recreio.uol.com.br/media/_versions/legacy/2021/05/28/hogwarts-1230088_widexl.jpg"
                                 alt="">
                             <h2>NOME</h2>
@@ -99,11 +72,14 @@
                     </div>
 
                 </div>
-                <button>Acessar Quizz</button>
-                <a href="index.html" rel="prev"><button class="home">Voltar pra home</button></a>
+                <div class="botoesQuizz">
+                    <button>Acessar Quizz</button>
+                    <a href="index.html" rel="prev"><button class="home">Voltar pra home</button></a>
+                </div> -->
             </main>
         </div>
     </div>
 </body>
-
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="src/tela2.js"></script>
 </html>
