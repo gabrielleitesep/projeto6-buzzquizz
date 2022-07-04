@@ -3,10 +3,9 @@ let contadorNota = 0;
 let nota = 0;
 const API = "https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/180";
 const main = document.querySelector("main");
-const response = axios.get(API).then(renderizarTela2)
-
 
 function renderizarTela2(response) {
+  console.log(response);
     main.innerHTML = `
         <div class="quizzBackground" style="
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), 
@@ -25,9 +24,8 @@ function renderizarTela2(response) {
 function questoes_quizz(quizz) {
     console.log(quizz)
     let adicionarQuizz = document.querySelector(".quizzQuestions");
-    console.log(adicionarQuizz)
-
-    for (j = 0; j < quizz.questions.length; j++) {
+    console.log(adicionarQuizz);
+    for (let j = 0; j < quizz.questions.length; j++) {
         let sorteador = quizz.questions;
         sorteador[j].answers.sort(comparador)
         adicionarQuizz.innerHTML +=
@@ -125,3 +123,5 @@ function selecionarResposta(elemento) {
 
 
 }
+
+window.renderizarTela2 = renderizarTela2

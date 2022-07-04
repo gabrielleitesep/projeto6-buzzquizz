@@ -354,9 +354,15 @@ li.quizz h1,
 }
 .questionOptions.true {
     color: #009C22;
+    font-weight: 700;
+    font-size: 20px;
+    pointer-events: none;
 }
 .questionOptions.false{
     color: #FF4B4B;
+    font-weight: 700;
+    font-size: 20px;
+    pointer-events: none;
 }
 
 .questionOptions.oculta {
