@@ -1,7 +1,7 @@
 let asc =0;
 let contadorNota = 0;
 let nota = 0;
-const API = "https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/15";
+const API = "https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/180";
 const main = document.querySelector("main");
 const response = axios.get(API).then(renderizarTela2)
 
@@ -18,7 +18,6 @@ function renderizarTela2(response) {
             </h1>
         </div>
         <div class="quizzQuestions">
-           
         </div>
   `;
     questoes_quizz(response.data);
@@ -26,6 +25,7 @@ function renderizarTela2(response) {
 function questoes_quizz(quizz) {
     console.log(quizz)
     let adicionarQuizz = document.querySelector(".quizzQuestions");
+    console.log(adicionarQuizz)
 
     for (j = 0; j < quizz.questions.length; j++) {
         let sorteador = quizz.questions;
@@ -33,13 +33,13 @@ function questoes_quizz(quizz) {
         adicionarQuizz.innerHTML +=
             `<div id="a${j}" class="containerQuestion">        
         <div class="questionLine" style = "background-color:${sorteador[j].color} ;"><h1>${sorteador[j].title}</h1></div>
-        <div class="questionOptions">      
-        </div>
         </div>`;
 
-        let adicionarPerguntasum = adicionarQuizz.querySelector(`#a${j} .questionOptions`);
 
         for (let i = 0; i < sorteador[j].answers.length; i++) {
+            let adicionarPerguntasum = adicionarQuizz.querySelector(`#a${j}.containerQuestion`);
+        console.log(adicionarPerguntasum)
+
             adicionarPerguntasum.innerHTML += `<div class="questionOptions">
         <img src=${sorteador[j].answers[i].image}>
         <p class="questionOptions ${sorteador[j].answers[i].isCorrectAnswer} oculta">${sorteador[j].answers[i].text}</p>`;
