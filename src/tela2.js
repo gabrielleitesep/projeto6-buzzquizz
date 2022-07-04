@@ -1,25 +1,25 @@
 let asc =0;
 let contadorNota = 0;
 let nota = 0;
-const API = "https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/180";
 const main = document.querySelector("main");
+
 
 function renderizarTela2(response) {
   console.log(response);
     main.innerHTML = `
         <div class="quizzBackground" style="
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), 
-            url(${response.data.image});
+            url(${response.image});
             background-size: cover;
             background-position: center;">
             <h1>
-                ${response.data.title}
+                ${response.title}
             </h1>
         </div>
         <div class="quizzQuestions">
         </div>
   `;
-    questoes_quizz(response.data);
+    questoes_quizz(response);
 }
 function questoes_quizz(quizz) {
     console.log(quizz)
