@@ -292,6 +292,7 @@ li.quizz h1,
   flex-wrap: wrap;
   box-sizing: border-box;
   box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.05);
+
 }
 .quizzResults {
   width: 364px;
@@ -303,6 +304,8 @@ li.quizz h1,
   line-height: 46px;
   color: white;
   text-shadow: 2px 2px 2px black;
+  display: flex;
+  flex-wrap: wrap;
 }
 .quizzResultsText {
   width: 330px;
@@ -347,21 +350,37 @@ li.quizz h1,
     box-sizing: border-box;   
 }
 .questionOptions.false.oculta {
-    color: #000000;
+    color: orange;
 }
 .questionOptions.true.oculta {
     color: #000000;
 }
 .questionOptions.true {
     color: #009C22;
+    font-weight: 700;
+    font-size: 20px;
+    pointer-events: none;
 }
 .questionOptions.false{
     color: #FF4B4B;
+    font-weight: 700;
+    font-size: 20px;
+    pointer-events: none;
 }
 
 .questionOptions.oculta {
     color: #000000;
     font-size: 20px;
+}
+.botoesQuizz {
+    height: 300px;
+    width: 100%;
+    display: flex;
+}
+.button {
+    margin-top: 10px;
+  background-color: unset;
+  color: #818181;
 }
 
 @media (max-width: 1100px) {

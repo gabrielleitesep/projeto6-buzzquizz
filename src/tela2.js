@@ -1,34 +1,37 @@
 let asc =0;
 let contadorNota = 0;
 let nota = 0;
-const API = "https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/180";
 const main = document.querySelector("main");
-const response = axios.get(API).then(renderizarTela2)
+let quizz;
 
 
 function renderizarTela2(response) {
     main.innerHTML = `
         <div class="quizzBackground" style="
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), 
-            url(${response.data.image});
+            url(${response.image});
             background-size: cover;
             background-position: center;">
             <h1>
-                ${response.data.title}
+                ${response.title}
             </h1>
         </div>
         <div class="quizzQuestions">
         </div>
+        <div class="containerResults">
+        </div>
+        <div class="botoesQuizz">
+        </div>
   `;
-    questoes_quizz(response.data);
+    questoes_quizz(response);
 }
-function questoes_quizz(quizz) {
-    console.log(quizz)
+function questoes_quizz(parametro) {
+    console.log(parametro)
     let adicionarQuizz = document.querySelector(".quizzQuestions");
     console.log(adicionarQuizz)
-
-    for (j = 0; j < quizz.questions.length; j++) {
-        let sorteador = quizz.questions;
+    quizz = parametro
+    for (let j = 0; j < parametro.questions.length; j++) {
+        let sorteador = parametro.questions;
         sorteador[j].answers.sort(comparador)
         adicionarQuizz.innerHTML +=
             `<div id="a${j}" class="containerQuestion">        
@@ -40,7 +43,7 @@ function questoes_quizz(quizz) {
             let adicionarPerguntasum = adicionarQuizz.querySelector(`#a${j}.containerQuestion`);
         console.log(adicionarPerguntasum)
 
-            adicionarPerguntasum.innerHTML += `<div class="questionOptions">
+            adicionarPerguntasum.innerHTML += `<div class="questionOptions" onclick="selecionarResposta(this)">
         <img src=${sorteador[j].answers[i].image}>
         <p class="questionOptions ${sorteador[j].answers[i].isCorrectAnswer} oculta">${sorteador[j].answers[i].text}</p>`;
         }
@@ -52,7 +55,6 @@ function questoes_quizz(quizz) {
         let scroler = document.querySelector("main").scrollIntoView();
     }
 }
-
 function comparador() {
     return Math.random() - 0.5;
 }
@@ -60,26 +62,28 @@ function comparador() {
 
 function finalQuizz() {
 
-    nota = Math.round((contadorNota * 100) / quizzQuestions.length);
+    nota = Math.round((contadorNota * 100) / quizz.questions.length);
     console.log(nota);
     for (let i = (quizz.levels.length - 1); i >= 0; i = i - 1) {
         if (nota >= quizz.levels[i].minValue) {
             let addFim = document.querySelector(".containerResults");
             addFim.innerHTML = `      
-            <div class="img-topo-fim">
-                <h2> ${nota}% de acerto: ${quizz.levels[i].title} </h2>
+            <div class="resultLine">
+                <h1> ${nota}% de acerto: ${quizz.levels[i].title} </h1>
             </div>
-            <div class="quizzResultsText">
-            <img src=${quizz.levels[i].image}>
-            <p class="texto-fim">${quizz.levels[i].text}</p>          
-            </div>
-            </div>        
+            <div class="quizzResults">
+                <img src=${quizz.levels[i].image}>
+                <div class="quizzResultsText">
+                    <h4>${quizz.levels[i].text}<h4>
+                </div>        
+            </div>       
             `;
         }
     }
     let addBotao = document.querySelector("botoesQuizz");
     addBotao.innerHTML = `
-<div class="button.home" onclick="voltarInicial()"><p>Voltar pra home</p></div>`
+    <button>Acessar Quizz</button>
+    <a href="index.html" rel="prev"><button class="home">Voltar pra home</button></a>`
 }
 
 function selecionarResposta(elemento) {
@@ -87,9 +91,9 @@ function selecionarResposta(elemento) {
 
 
     elemento.classList.remove("auxiliar");
-    elemento.querySelector(".opcao-resposta").classList.remove("oculta");
+    elemento.querySelector(".questionOptions").classList.remove("oculta");
 
-    elemento.querySelector(".opcao-resposta").classList.add("clicada");
+    elemento.querySelector(".questionOptions").classList.add("clicada");
 
     const pai = elemento.parentNode.parentNode;
     console.log(pai);
@@ -100,22 +104,22 @@ function selecionarResposta(elemento) {
     console.log(contadorNota);
 
     for (let i = 0; i < 3; i++) {
-        let aux = pai.querySelector(".auxiliar");
+        let aux = pai.querySelector("questionOptions");
         if (aux !== null) {
             aux.classList.remove("auxiliar");
             aux.classList.add("naoclicada");
-            aux.querySelector(".opcao-resposta").classList.remove("oculta");
+            aux.querySelector(".questionOptions").classList.remove("oculta");
         }
     }
-    if (asc <= quizz.questions.length) {
+    if (asc <= quizz.length) {
         setTimeout(scrollar, 2000);
 
         function scrollar() {
-            let scrolll = document.querySelector(`.caixa-quizz:nth-child(${asc})`).scrollIntoView();
+            let scrolll = document.querySelector(`.containerQuestion:nth-child(${asc})`).scrollIntoView();
             asc++;
         }
     } else {
-        implementar_finalizador();
+        finalQuizz();
         setTimeout(scrollar, 2000);
 
         function scrollar() {
