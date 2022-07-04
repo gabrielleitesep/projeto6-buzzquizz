@@ -19,6 +19,7 @@ function renderizarQuizz(promise) {
   });
 }
 
+<<<<<<< HEAD
 function renderizarQuizzLocal() {
   let userQuizz = JSON.parse(localStorage.getItem("userQuizz"));
   if (!userQuizz) {
@@ -61,3 +62,12 @@ function renderizarQuizzLocal() {
 function renderTela2() {
   //Esperando o Get das perguntas pra evitar retrabalho
 }
+=======
+console.log(renderizarTela2(1))
+/*function testeee(){
+    let au = JSON.parse(localStorage.getItem("usuario"))
+    
+    console.log(au)
+    
+}*/
+>>>>>>> 54b990ed0787de439408d2a4d4b8d42c58a0f561
