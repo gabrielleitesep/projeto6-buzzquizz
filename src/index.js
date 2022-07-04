@@ -67,3 +67,4 @@ function returnMain(){
 
 window.renderizarQuizz = renderizarQuizz
 window.renderizarQuizzLocal = renderizarQuizzLocal
+window.returnMain = returnMain
