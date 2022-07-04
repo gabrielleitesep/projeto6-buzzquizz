@@ -14,8 +14,8 @@ let nLevels
 
 
 function apiPost() {
-    axios.post("https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes", userQuizz)
-        .then(renderPronto)
+    axios.post("https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes", userQuizz)
+        .then((promise)=> renderPronto(promise))
         .catch((err) => {
             alert("deu ruim")
         });
@@ -272,8 +272,8 @@ function saveLevels() {
 
 }
 
-function renderPronto() {
-    storageQuizz()
+function renderPronto(promise) {
+    storageQuizz(promise)
     document.querySelector(".tela3 .criarQuizz").innerHTML = `
                 <div class="quizzPronto">
                     <div class="quizz" style="
@@ -289,13 +289,14 @@ function renderPronto() {
     `
 }
 
-function storageQuizz() {
+function storageQuizz(promise) {
     if (JSON.parse(localStorage.getItem("User") != null)) {
         listUserQuizz = (JSON.parse(localStorage.getItem("User")))
     }
 
-    listUserQuizz.push(JSON.stringify(userQuizz))
+    listUserQuizz.push(promise.data)
     localStorage.setItem("User", JSON.stringify(listUserQuizz))
+    console.log(promise)
 }
 
 window.renderTela3 = renderTela3
