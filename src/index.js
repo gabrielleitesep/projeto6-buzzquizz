@@ -53,7 +53,7 @@ function renderizarQuizzLocal() {
       const levels = quizz.levels;
 
       document.querySelector(".tela1 .quizzUsuario ul").innerHTML += `
-    <li id="${id}" class="quizz" style="background-image: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,rgba(0, 0, 0, 0.5) 64.58%,#000000 100%), url(${image})">
+    <li id="${id}" onclick="selecionarQuizz(this)" class="quizz" style="background-image: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,rgba(0, 0, 0, 0.5) 64.58%,#000000 100%), url(${image})">
       <h1>${title}</h1>
     </li>
     `;
